@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" styleClass="primary_color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wish122.MenuController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="208.0" spacing="20.0" styleClass="secondary-color" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/ic_more.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <VBox prefHeight="173.0" prefWidth="208.0" spacing="10.0">
+               <children>
+                  <HBox fx:id="homebox" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" stylesheets="@style.css">
+                     <children>
+                        <ImageView fx:id="home" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/ic_home.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="homebutton" mnemonicParsing="false" onAction="#toHome" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: transparent;" styleClass="homebutton" stylesheets="@style.css" text="Home" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="homebox" />
+                        <String fx:value="selected" />
+                     </styleClass>
+                  </HBox>
+                  <HBox fx:id="searchbox" alignment="CENTER" layoutX="10.0" layoutY="70.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="starbox" stylesheets="@style.css">
+                     <children>
+                        <ImageView fx:id="search" fitHeight="44.0" fitWidth="51.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/ic_search.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#toSearch" prefHeight="40.0" prefWidth="86.0" style="-fx-background-color: transparent;" styleClass="stargazebutton" stylesheets="@style.css" text="Search" textFill="#a4a4a4">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="stargazebox" alignment="CENTER" prefHeight="62.0" prefWidth="208.0" spacing="20.0" styleClass="starbox" stylesheets="@style.css">
+                     <children>
+                        <ImageView fx:id="star" fitHeight="42.0" fitWidth="41.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/stargaze.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="stargazebutton" mnemonicParsing="false" onAction="#toStargaze" style="-fx-background-color: transparent;" styleClass="stargazebutton" stylesheets="@style.css" text="Stargaze" textFill="#a4a4a4">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="starbox">
+                     <children>
+                        <VBox prefHeight="56.0" prefWidth="13.0" />
+                        <ImageView fitHeight="49.0" fitWidth="59.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/addsong.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="42.0" prefWidth="9.0" />
+                        <Button mnemonicParsing="false" onAction="#openAddSongWindow" style="-fx-background-color: transparent;" styleClass="homebutton" text="Add Song" textFill="#a4a4a4">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="57.0" prefWidth="208.0" styleClass="starbox">
+                     <children>
+                        <VBox prefHeight="58.0" prefWidth="7.0" />
+                        <ImageView fitHeight="59.0" fitWidth="67.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/removesong.png" />
+                           </image>
+                        </ImageView>
+                        <Button mnemonicParsing="false" onAction="#openRemoveSongWindow" style="-fx-background-color: transparent;" styleClass="homebutton" text="Remove Song" textFill="#a4a4a4">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="49.0" prefWidth="208.0" styleClass="starbox">
+                     <children>
+                        <VBox prefHeight="58.0" prefWidth="6.0" />
+                        <ImageView fitHeight="51.0" fitWidth="70.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/editsong.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="58.0" prefWidth="0.0" />
+                        <Button mnemonicParsing="false" onAction="#openEditSongWindow" style="-fx-background-color: transparent;" styleClass="stargazebutton" text="Edit Song" textFill="#a4a4a4">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="514.0" prefWidth="208.0">
+               <children>
+                  <VBox prefHeight="502.0" prefWidth="208.0" />
+                  <HBox prefHeight="86.0" prefWidth="208.0" styleClass="homebox">
+                     <children>
+                        <ImageView fx:id="logoutimage" fitHeight="43.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" styleClass="logoutimage">
+                           <image>
+                              <Image url="@Images/logoutbutton.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="49.0" prefWidth="0.0" />
+                        <Button mnemonicParsing="false" onAction="#toLogout" prefHeight="40.0" prefWidth="102.0" style="-fx-background-color: transparent;" text="Logout" textFill="#a1a1a1">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="1297.0" style="-fx-background-color: #282828;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="364.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="201.0">
+                     <children>
+                        <Label fx:id="songName" prefHeight="27.0" prefWidth="212.0" text="Raining In Manila" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="songArtist" prefHeight="27.0" prefWidth="212.0" text="Lola Amour" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <StackPane prefHeight="34.0" prefWidth="60.0">
+                     <children>
+                        <ImageView fx:id="likesongimg" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/ic_love.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="likesongsbutton" mnemonicParsing="false" onAction="#likesongsbutton" prefHeight="26.0" prefWidth="28.0" style="-fx-background-color: transparent;" />
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <Pane prefHeight="100.0" prefWidth="0.0" />
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="740.0" spacing="10.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="11.0" prefWidth="740.0" spacing="30.0">
+                     <children>
+                        <StackPane prefHeight="36.0" prefWidth="69.0">
+                           <children>
+                              <ImageView fx:id="shuffleImg" fitHeight="36.0" fitWidth="68.0" opacity="0.41" pickOnBounds="true" preserveRatio="true" styleClass="mediabutton">
+                                 <image>
+                                    <Image url="@Images/shufflebutton.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="shuffleButton" mnemonicParsing="false" onAction="#onShuffle" prefHeight="26.0" prefWidth="29.0" style="-fx-background-color: transparent;" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="36.0" prefWidth="47.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="44.0" opacity="0.41" pickOnBounds="true" preserveRatio="true" styleClass="mediabutton">
+                                 <image>
+                                    <Image url="@Images/prevbutton.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="prevButton" mnemonicParsing="false" onAction="#onPrev" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: transparent;" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="26.0" prefWidth="54.0">
+                           <children>
+                              <ImageView fx:id="playButton" fitHeight="36.0" fitWidth="68.0" opacity="0.41" pickOnBounds="true" preserveRatio="true" styleClass="mediabutton">
+                                 <image>
+                                    <Image url="@Images/playbutton.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="playPauseButton" mnemonicParsing="false" onAction="#onPlayPause" prefHeight="26.0" prefWidth="25.0" style="-fx-background-color: transparent;" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="36.0" prefWidth="56.0">
+                           <children>
+                              <ImageView fitHeight="34.0" fitWidth="42.0" opacity="0.41" pickOnBounds="true" preserveRatio="true" styleClass="mediabutton">
+                                 <image>
+                                    <Image url="@Images/nextbutton.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="nextButton" mnemonicParsing="false" onAction="#onNext" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: transparent;" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="36.0" prefWidth="56.0">
+                           <children>
+                              <ImageView fx:id="loopImg" fitHeight="36.0" fitWidth="68.0" opacity="0.41" pickOnBounds="true" preserveRatio="true" styleClass="mediabutton">
+                                 <image>
+                                    <Image url="@Images/loopbutton.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="loopButton" mnemonicParsing="false" onAction="#onLoop" prefHeight="26.0" prefWidth="35.0" style="-fx-background-color: transparent;" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label fx:id="currentTimeLabel" text="00:00" textFill="WHITE" />
+                        <Slider fx:id="slider" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="durationLabel" text="02:37" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane prefHeight="100.0" prefWidth="0.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <StackPane prefHeight="100.0" prefWidth="84.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="34.0" opacity="0.41" pickOnBounds="true" preserveRatio="true" styleClass="mediabutton">
+                           <image>
+                              <Image url="@Images/soundbutton.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="volumeButton" mnemonicParsing="false" onAction="#onVolumePress" prefHeight="26.0" prefWidth="32.0" style="-fx-background-color: transparent;" />
+                     </children>
+                  </StackPane>
+                  <Slider fx:id="volumeSlider" orientation="VERTICAL" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane layoutY="346.0" prefHeight="446.0" prefWidth="1109.0" style="-fx-background-color: transparent;">
+               <content>
+                  <VBox prefHeight="570.0" prefWidth="1665.0" spacing="10.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" minViewportHeight="270.0" prefHeight="541.0" prefViewportWidth="10.0" prefWidth="1626.0" style="-fx-background-color: transparent;">
+                           <content>
+                              <HBox prefHeight="430.0" prefWidth="1624.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="0.0" />
+                                    <TableView fx:id="likedSongTable" prefHeight="277.0" prefWidth="466.0" style="-fx-background-color: transparent;">
+                                       <columns>
+                                          <TableColumn fx:id="likedSongTitle" prefWidth="205.60000306367874" text="Title" />
+                                          <TableColumn fx:id="likedSongArtist" prefWidth="97.59999084472656" text="Author" />
+                                          <TableColumn fx:id="likedSongAlbum" prefWidth="87.20001220703125" text="Album" />
+                                          <TableColumn fx:id="likedSongGenre" prefWidth="75.199951171875" text="Genre" />
+                                       </columns>
+                                    </TableView>
+                                    <VBox prefHeight="100.0" prefWidth="92.0">
+                                       <children>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <Button layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#defaultSongSetTable" style="-fx-background-color: transparent;" styleClass="defaultbutton" stylesheets="@style.css" text="Default" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button layoutX="3.0" layoutY="60.0" mnemonicParsing="false" onAction="#sortSongNameSetTable" style="-fx-background-color: transparent;" styleClass="defaultbutton" stylesheets="@style.css" text="Sort By Name" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                       </children></VBox>
+                                    <TableView fx:id="allSongTable" prefHeight="100.0" prefWidth="469.0" style="-fx-background-color: transparent;">
+                                       <columns>
+                                          <TableColumn fx:id="allSongTitle" prefWidth="205.60003054141998" text="Title" />
+                                          <TableColumn fx:id="allSongArtist" prefWidth="106.39996337890625" text="Author" />
+                                          <TableColumn fx:id="allSongAlbum" prefWidth="71.2000732421875" text="Album" />
+                                          <TableColumn fx:id="allSongGenre" prefWidth="84.8000427246094" text="Genre" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1110.0" spacing="20.0" style="-fx-background-color: #000000;">
+               <children>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" />
+                        <Button mnemonicParsing="false" style="-fx-background-color: transparent;" />
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="256.0" spacing="10.0" style="-fx-background-color: #000000;" stylesheets="@style.css">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/user.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="usernameLabel" prefHeight="27.0" prefWidth="171.0" text="Username" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" layoutX="-1.0" layoutY="56.0" prefHeight="242.0" prefWidth="1109.0" style="-fx-background-color: #000000;">
+               <children>
+                  <ImageView fitHeight="242.0" fitWidth="1108.0" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@img/Room.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <HBox layoutY="297.0" prefHeight="49.0" prefWidth="1109.0" styleClass="primary_color" stylesheets="@style.css">
+               <children>
+                  <AnchorPane prefHeight="30.0" prefWidth="72.0">
+                     <children>
+                        <ImageView fitHeight="39.0" fitWidth="28.0" layoutX="36.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/ic_love.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Label prefHeight="27.0" prefWidth="116.0" text="Liked Songs" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="30.0" prefWidth="401.0" />
+                  <VBox prefHeight="38.0" prefWidth="9.0" />
+                  <Label layoutX="110.0" layoutY="10.0" text="All Songs" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane fx:id="header" layoutY="297.0" prefHeight="25.0" prefWidth="1110.0" styleClass="primary_color" />
+            <ScrollPane fx:id="stargazeView" layoutY="302.0" prefHeight="491.0" prefWidth="1110.0" style="-fx-background-color: transparent;">
+               <content>
+                  <VBox prefHeight="744.0" prefWidth="1666.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="31.0" prefWidth="1626.0" />
+                        <Label text="Japanese Pop" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane fitToWidth="true" minViewportHeight="270.0" prefHeight="229.0" prefViewportWidth="10.0" prefWidth="1059.0" style="-fx-background-color: transparent;">
+                           <content>
+                              <HBox fx:id="recentlyPlayedContainer" spacing="30.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="101.0">
+                                       <children>
+                                          <ImageView fx:id="ghostButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/ghost.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="GHOST / 星街すいせい" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Hoshimachi Suisei" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="mephistoButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/mephisto.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Mephisto/メフィスト " textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Queen Bee" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="218.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="overdoseButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/overdose.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Overdose" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="なとり/natori" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="426.0" layoutY="10.0" prefHeight="215.0" prefWidth="203.0">
+                                       <children>
+                                          <ImageView fx:id="yorunopierrotButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/yoru-no-pierrot.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="20.0" prefWidth="212.0" text="Yoru No Pierrot/夜のピエロ" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Ado" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="426.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="paletteButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/Palette.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Palette/常闇トワ" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Tokoyama Towa" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <Label text="OPM Hits" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane fitToWidth="true" minViewportHeight="270.0" prefHeight="229.0" prefWidth="1059.0" style="-fx-background-color: transparent;">
+                           <content>
+                              <HBox fx:id="favoriteContainer" prefHeight="0.0" prefWidth="0.0" spacing="30.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="rinButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/raining-in-manila.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Raining In Manila" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Lola Amour" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="kyusiButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/kyusi.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Kyusi" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Zild" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="218.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="mapaButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/Mapa.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="MAPA" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="SB19" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="426.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="nangangambaButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/nangangamba.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Nangangamba" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Zack Tabudlo" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="634.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="pasilyoButton" fitHeight="177.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Images/pasilyo.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="Pasilyo" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Sunkissed Lola" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <VBox fx:id="searchView" layoutY="297.0" prefHeight="493.0" prefWidth="1110.0" styleClass="primary_color" stylesheets="@style.css">
+               <children>
+                  <VBox prefHeight="493.0" prefWidth="1107.0">
+                     <children>
+                        <HBox prefHeight="36.0" prefWidth="1107.0" />
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="1107.0">
+                           <children>
+                              <Pane prefHeight="36.0" prefWidth="34.0" />
+                              <TextField fx:id="songSearchField" prefHeight="25.0" prefWidth="370.0" promptText="Enter Song Title..." styleClass="search-container" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="11.0" />
+                              <Button fx:id="songSearchButton" mnemonicParsing="false" onAction="#onSongSearch" style="-fx-background-color: transparent;" styleClass="defaultbutton" text="⌕ Search" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="36.0" prefWidth="1107.0" />
+                        <ScrollPane fx:id="resultScreen" prefHeight="421.0" prefWidth="1110.0">
+                           <content>
+                              <VBox fx:id="resultBox" prefHeight="408.0" prefWidth="1109.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <stylesheets>
+            <URL value="@style.css" />
+         </stylesheets>
+      </AnchorPane>
+   </center>
+</BorderPane>
